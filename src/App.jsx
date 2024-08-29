@@ -1,19 +1,33 @@
 import './App.css'
-import Nav from './components/Nav/Nav'
-import Hero2 from './components/Hero2/Hero2'
-import About from './components/About/About'
-import Book from './components/Booking/Book'
+import Home from './components/Home/Home'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Login from './components/Login/Login'
 
 
-// #CEB79F
+
 function App() {
+
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home/>,
+    },
+    {
+      path: "/Login",
+      element: <Login/>,
+    },
+    
+    
+    
+  ]);
 
   return (
     <>
-     <Nav/>
-     <Hero2/>
-     <About/>
-     <Book/>
+    <RouterProvider router={router} />
     </>
   )
 }

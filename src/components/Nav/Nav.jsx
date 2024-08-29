@@ -4,9 +4,7 @@ import { IoPerson } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa";
 import { IoCallSharp } from "react-icons/io5";
-import { IoLogoWhatsapp } from "react-icons/io";
-import Login from '../Login/Login';
-import { RxCross1 } from "react-icons/rx";
+
 function Nav() {
     const [burgar , setburgar] = useState("hamburgar");
     const [menu , setMenu] = useState("closemenu");
@@ -85,14 +83,12 @@ function Nav() {
                 </li>
             </ul>
             <div>
-                <span><a href="#"><IoCallSharp /></a></span> <span onClick={()=>{setOpenlogin("openlogin")}} ><a href="#"><IoPerson /></a></span>
+                <span><a href="#"><IoCallSharp /></a></span> 
+                <span><NavLink to='/Login'><IoPerson /></NavLink></span>
             </div>
         </div>
     </nav>
-    <div className={openlogin}>
-        <span onClick={()=>{setOpenlogin("closelogin")}}><RxCross1 /></span>   
-        <Login/>
-    </div>
+   
     
     </>
   )
