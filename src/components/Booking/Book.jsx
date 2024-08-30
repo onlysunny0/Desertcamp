@@ -99,40 +99,22 @@ function Book() {
 
   return (
     <>
-    <div className="container my-5">
-      <h1 className="text-center display-3 mb-4">{room.name}</h1>
-      <div className="row">
-        <div className="col-md-6">
-          <div className="card border-0 shadow-lg rounded">
-            <img
-              src={room.image}
-              alt={room.name}
-              className="card-img-top img-fluid rounded-top"
-              style={{ objectFit: "cover", maxHeight: "400px" }}
-            />
-          </div>
-        </div>
-        <div className="col-md-6">
-          <div className="card border-0 shadow-sm rounded p-4">
-            <div className="card-body">
-              <h3 className="card-title mb-3">Description</h3>
-              <p className="card-text">{room.description}</p>
-              <h4 className="mt-3">Price: ${room.pricePerNight} per night</h4>
-              <h5 className="mt-3">Amenities:</h5>
-              <ul className="list-group mb-4">
-                {room.amenities.map((amenity, index) => (
-                  <li
-                    key={index}
-                    className="list-group-item d-flex align-items-center"
-                  >
-                    <i className="bi bi-check-circle me-2 text-success"></i>
-                    {amenity}
-                  </li>
-                ))}
-              </ul>
+    <div className='booking'>
+      <div className="bookingfilter">
 
+          <div className="book-1">
+              <h3>Book Now <div className='headingline'></div></h3>
+              <h4>Delux Room</h4>
+              <img src="./room.jpg" alt="" />
+              <h4>Decription</h4>
+              <p>A luxurious room with a king-size bed, sea view, and complimentary breakfast.</p>          
+          </div>
+
+          <form action="">
               <div className="mb-4">
-                <h5>Select a Date:</h5>
+                <h5>Available Rooms: {roomQuantity}</h5>
+              </div>
+                <label htmlFor="">Check in:</label>
                 <input
                   type="date"
                   className="form-control"
@@ -140,6 +122,16 @@ function Book() {
                   value={selectedDate}
                   onChange={handleDateChange}
                 />
+
+              <label htmlFor="">Check Out:</label>
+                <input
+                  type="date"
+                  className="form-control"
+                  min={today}
+                  value={selectedDate}
+                  onChange={handleDateChange}
+              />
+
                 {selectedDate && (
                   <div className="mt-3">
                     <h5>Availability Status:</h5>
@@ -154,10 +146,8 @@ function Book() {
                     </p>
                   </div>
                 )}
-              </div>
 
-              <div className="mb-4">
-                <h5>Select Number of Guests:</h5>
+              <label htmlFor="">Select Number of Rooms:</label>
                 <select
                   className="form-select"
                   value={guestCount}
@@ -169,15 +159,24 @@ function Book() {
                     </option>
                   ))}
                 </select>
-              </div>
 
-              <div className="mb-4">
-                <h5>Remaining Quantity: {roomQuantity}</h5>
-              </div>
-              {isAuthenticated ? (
+                <label htmlFor="">Select Number of Guests:</label>
+                <select
+                  className="form-select"
+                  value={guestCount}
+                  onChange={(e) => setGuestCount(parseInt(e.target.value))}
+                >
+                  {[...Array(room.maxOccupancy).keys()].map((_, index) => (
+                    <option key={index + 1} value={index + 1}>
+                      {index + 1} Guest{index + 1 > 1 ? "s" : ""}
+                    </option>
+                  ))}
+                </select>
+
+                 {isAuthenticated ? (
                 <button
                   onClick={handleBooking}
-                  className="btn btn-primary btn-lg w-100 mt-3"
+                  className="btn btn-primary btn-lg w-100 mt-3 bg-dark"
                   disabled={availabilityMessage !== "Available"}
                 >
                   <i className="bi bi-check2-circle me-2"></i> Proceed to Book
@@ -185,17 +184,24 @@ function Book() {
               ) : (
                 <button
                   onClick={redirect}
-                  className="btn btn-primary btn-lg w-100 mt-3"
+                  className="btn btn-primary btn-lg w-100 mt-3 bg-dark"
                 >
                   <i className="bi bi-check2-circle me-2"></i> Login to proceed
                   to Book
                 </button>
               )}
-            </div>
-          </div>
-        </div>
+
+          </form>
       </div>
+        
     </div>
+
+
+
+
+
+
+   
     </>
   )
 }
