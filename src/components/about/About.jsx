@@ -75,9 +75,6 @@ function About() {
     
 
 
-    {/* <Plx className="parlexdiv" parallaxData={parlexdiv}>
-        <img src="https://assets-global.website-files.com/5f858c8d952706d07e333d4b/60306d4fe689ff56605c654e_MAD_293.jpg" alt="" />
-    </Plx> */}
 
 
     

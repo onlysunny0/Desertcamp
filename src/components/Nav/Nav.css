@@ -14,22 +14,22 @@ nav{
     color: #FF5733;
 }
 .dropdown{
-    padding: 2% 0%;
+    
 }
 .dropdown:hover .dropdown-menu{
     display: block;
 }
-.dropdown-menu,.openshop{
+.dropdown-menu, .openshop{
     display: none;
     position: absolute;
-    top: 7vh;
+    top: 8vh;
     z-index: 100;
     background-color: #CEB79F;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     width: 13%;
 }
 
-.dropdown-menu li,.openshop li{
+.dropdown-menu>li, .openshop>li{
     list-style: none;
     color: #333333;
     font-weight: 500;
@@ -47,6 +47,7 @@ nav{
 .left-nav{
     width: 30%;
     height: 10vh;
+    display: flex;
 }
 .left-nav>ul{
     width: 100%;
@@ -64,12 +65,14 @@ nav{
     cursor: pointer;
     letter-spacing: 2px;
     color: #333333;
+    padding: 5% 0%;
 }
 .left-nav>ul>li>a{
     color: #333333;
     font-weight: 700;
+    text-decoration: none;
 }
-.left-nav>ul>li:hover{
+.left-nav>ul>li>a:hover{
     color: #FF5733;
 }
 
@@ -111,6 +114,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    
 }
 .right-nav>ul>li{
     font-size: 13px;
@@ -121,6 +125,7 @@ nav{
     cursor: pointer;
     letter-spacing: 2px;
     color: #333333;
+    padding: 15% 0%;
 }
 .right-nav>ul>li:hover{
     color: #FF5733;
@@ -141,6 +146,11 @@ nav{
     color: #FF5733;
 }
 
+
+
+.user-section div{
+    padding: 7% 0%;
+}
 
 
 
@@ -260,7 +270,7 @@ nav{
         position: absolute;
         z-index: 100;
        
-        background-color: #FFFFF0;
+        background-color: #CEB79F;
         box-shadow:  rgba(99, 99, 99, 0.126) 0px 1px 0px 0px;
     }
     .center-nav-logo img{

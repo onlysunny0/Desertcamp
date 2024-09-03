@@ -1,97 +1,107 @@
-import React, { useState } from 'react'
-import './Nav.css'
+import { useState } from 'react';
+import './Nav.css';
 import { IoPerson } from "react-icons/io5";
 import { NavLink } from "react-router-dom";
 import { FaAngleDown } from "react-icons/fa";
 import { IoCallSharp } from "react-icons/io5";
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../../redux/authSlice';
 
 function Nav() {
-    const [burgar , setburgar] = useState("hamburgar");
-    const [menu , setMenu] = useState("closemenu");
+    const [burgar, setBurgar] = useState("hamburgar");
+    const [menu, setMenu] = useState("closemenu");
     const [openshop, setOpenshop] = useState("dropdown-menu");
-    const [openlogin, setOpenlogin] = useState("closelogin")
+    const [dropdownOpen, setDropdownOpen] = useState(false);
 
-    function makecross(){
-        if(burgar == "hamburgar"){
-            setburgar("cross");
-            setMenu("openmenu")
-        }
-        else{
-            setburgar("hamburgar");
+    const user = useSelector((state) => state.auth.user); 
+    const dispatch = useDispatch();
+
+    const handleLogout = () => {
+        dispatch(logout());
+    };
+
+    function makecross() {
+        if (burgar === "hamburgar") {
+            setBurgar("cross");
+            setMenu("openmenu");
+        } else {
+            setBurgar("hamburgar");
             setMenu("closemenu");
         }
     }
-    function Openshop(){
-        if (openshop == "dropdown-menu"){
+
+    function openShop() {
+        if (openshop === "dropdown-menu") {
             setOpenshop("openshop");
-        }
-        else{
+        } else {
             setOpenshop("dropdown-menu");
         }
     }
-  return (
-    <>
-    <nav>
-        <div className="left-nav">
-            <div className={burgar} onClick={makecross} >
-                <span></span><span></span><span></span>
-            </div>
-            <ul className={menu}>
-                <li>
-                    Home
-                </li>
-                <li className='dropdown'>
-                    <li className='dropdown' onClick={Openshop}>Shop <FaAngleDown /></li>
-                    <ul className={openshop}>
-                        <li>Camping Tents</li>
-                        <li>Camping Furniture</li>
-                        <li>Camping Lights</li>
-                        <li>Others</li>
-                        <li>Sale</li>
+
+    return (
+        <>
+            <nav>
+                <div className="left-nav">
+                    <div className={burgar} onClick={makecross}>
+                        <span></span><span></span><span></span>
+                    </div>
+                    <ul className={menu}>
+                        <li><NavLink to='/'>Home</NavLink></li>
+                        <li><NavLink to='/Aboutus'>About Us</NavLink></li>
+                        <li className='dropdown' onClick={openShop}>
+                            <li  >Rooms<FaAngleDown /></li>
+                            <ul className={openshop}>
+                                <li>Camping Tents</li>
+                                <li>Deluxe Room</li>
+                            </ul>
+                        </li>
+                        <li>Contact</li>
                     </ul>
-                </li>
-                <li>
-                    About Us
-                </li>
-                <li>
-               Contact
-                </li>
-            </ul>   
-        </div>
-        <div className="center-nav-logo">
-            <img src='./logo.png' alt="hiiiiiiiiii" />
-        </div>
-        <div className="right-nav">
-            <ul>
-                <li className='dropdown'>
-                    Info Pages <FaAngleDown />
-                    <ul className='dropdown-menu'>
-                        <li>Privacy Policy</li>
-                        <li>Delivaery|Shipping</li>
-                        <li>Return|Exchange</li>
-                        <li>Term and Conditions</li>
+                </div>
+                <div className="center-nav-logo">
+                    <img src='./logo.png' alt="Logo" />
+                </div>
+                <div className="right-nav">
+                    <ul>
+                        <li className='dropdown'>
+                            Events <FaAngleDown />
+                            <ul className='dropdown-menu'>
+                                <li>Corporate Events</li>
+                                <li>Private Events</li>
+                            </ul>
+                        </li>
+                        <li className='dropdown'>
+                            Other <FaAngleDown />
+                            <ul className='dropdown-menu'>
+                                <li>Gallery</li>
+                                <li>Blog</li>
+                                <li>Places</li>
+                            </ul>
+                        </li>
                     </ul>
-                </li>
-                <li  className='dropdown'>
-                    Other <FaAngleDown />
-                    <ul className='dropdown-menu'>
-                        <li>My Account</li>
-                        <li>Cart</li>
-                        <li>Checkout</li>
-                        <li>Wishlist</li>
-                    </ul>
-                </li>
-            </ul>
-            <div>
-                <span><a href="#"><IoCallSharp /></a></span> 
-                <span><NavLink to='/Login'><IoPerson /></NavLink></span>
-            </div>
-        </div>
-    </nav>
-   
-    
-    </>
-  )
+                    <div className="user-section">
+                        <span><a href="#"><IoCallSharp /></a></span>
+                        {user ? (
+                            <div 
+                                className="dropdown" 
+                                onMouseEnter={() => setDropdownOpen(true)} 
+                                onMouseLeave={() => setDropdownOpen(false)}
+                            >
+                                <span>Welcome, {user.name} <FaAngleDown /></span>
+                                {dropdownOpen && (
+                                    <ul className="dropdown-menu">
+                                        <li onClick={handleLogout}>Logout</li>
+                                    </ul>
+                                )}
+                            </div>
+                        ) : (
+                            <span><NavLink to='/login'><IoPerson /></NavLink></span>
+                        )}
+                    </div>
+                </div>
+            </nav>
+        </>
+    );
 }
 
-export default Nav
+export default Nav;

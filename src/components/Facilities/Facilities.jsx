@@ -33,13 +33,13 @@ function Facilities() {
         </Plx>
         <Plx className="f-inner" parallaxData={facilities}>
                     <h4>Parking</h4>
-                    <img src="./camp3.jpg" alt="" />
+                    <img src="./camp4.jpg" alt="" />
                     
         </Plx>
       </div>
     </div>
 
-    <div className="dummy"></div>
+
     </>
 
   )

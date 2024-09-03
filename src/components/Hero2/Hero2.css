@@ -70,9 +70,51 @@
     width: 100%;
     position: absolute;
     top: 0%;
-    right: 0%;
     z-index: 100;
 }
 .mountain2 img{
     width: 100%;
+}
+
+
+@media only screen and (max-width: 1100px){
+    .Hero2section .herolayer0{
+        width: 1300px;
+        
+    }
+    .Hero2section .herolayer1{
+       width: 100%;
+    }
+    .herolayer1 h1{
+        font-size: 70px;
+        line-height: 70px;
+    }
+    .Hero2section .herolayer2{
+        width: 1300px;
+       
+    }
+    .Hero2section .mountain2{
+        width: 1300px;
+
+    }
+}
+
+@media only screen and (max-width: 750px){
+    .Hero2section .herolayer0{
+        width: 1300px;
+
+    }
+    .Hero2section .herolayer1{
+       width: 100%;
+    }
+    .herolayer1 h1{
+        font-size: 50px;
+        line-height: 50px;
+    }
+    .Hero2section .herolayer2{
+        width: 1300px;
+    }
+    .Hero2section .mountain2{
+        width: 1300px;
+    }
 }
