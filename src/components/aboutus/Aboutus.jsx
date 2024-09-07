@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Nav from '../Nav/Nav'
 import './Aboutus.css'
 import Plx from "react-plx";
 import Whyus from '../Whyus/Whyus';
 import Footer from '../footer/Footer';
 import Ourvalue from '../ourvalue/Ourvalue';
+import Contact from '../Contact/Contact';
+import { useLocation } from 'react-router-dom';
+
 
 function Aboutus() {
+    const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
     const abthero = [
         {
           start: 'self',
@@ -45,6 +53,7 @@ function Aboutus() {
     </div>
     <Whyus/>
     <Ourvalue/>
+    <Contact/>
     <Footer/>
     </>
   )

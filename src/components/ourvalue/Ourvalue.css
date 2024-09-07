@@ -70,3 +70,13 @@
     font-weight: 400;
     color: #fffff0;
 }
+
+
+@media only screen and (max-width: 1000px){
+    .l-val{
+        width: 100%;
+    }
+    .r-val{
+        width: 100%;
+    }
+}

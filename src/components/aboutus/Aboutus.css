@@ -42,8 +42,7 @@
 
 .abttxt{
     width: 100%;
-    padding: 5% 15%;
-    
+    padding: 5% 15%; 
 }
 .abttxt h3{
     font-size: 20px;
@@ -59,10 +58,33 @@
 }
 
 
+@media only screen and (max-width: 1000px){
+    .abtus{
+        top: 8vh;
+    }
+    .abthero{
+        height: 50vh;
+    }
+    .abthero-img{
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .abthero-img img{
+        width: 100%;
+        height: auto;
+    }
 
+    .abttxt{
+        width: 100%;
+        padding: 2% 5%; 
+        margin: 5% 0%;
+    }
+}
 
-.dummy{
-    width: 100%;
-    height: 200vh;
-    background-color: red;
+@media only screen and (max-width: 720px){
+    .abthero-img img{
+        width: auto;
+        height: 110%;
+    }
 }

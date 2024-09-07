@@ -4,7 +4,7 @@ import './Whyus.css'
 function Whyus() {
   return (
     <div className='Whyus'>
-        <div className="whyusfilter"></div>
+        <div className="whyusfilter">
 
         <div className="why-1">
             <h3>Why Choose Us <div className='headingline'></div></h3>
@@ -27,7 +27,9 @@ function Whyus() {
                 <p>Heidi B. Smith</p>
             </div>
         </div>
+        </div>
     </div>
+
   )
 }
 

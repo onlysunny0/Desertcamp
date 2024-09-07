@@ -8,6 +8,12 @@ import Login from './components/Login/Login'
 import Register from './components/register/Register';
 import Confirmation from './components/confirmation/Comfirmation';
 import Aboutus from './components/aboutus/Aboutus';
+import Camp from './components/CampingTents/Camp';
+import Room from './components/DeluxRoom/Room';
+import Gallery from './components/Gallery/Gallery';
+import Event1 from './components/Event/Event1';
+import Event2 from './components/Event/Event2';
+import Activity from './components/Activity/Activity';
 
 
 
@@ -35,6 +41,32 @@ function App() {
       path: "/confirmation",
       element: <Confirmation/>,
     },
+    {
+      path: "/CampingTents",
+      element: <Camp/>,
+    },
+    {
+      path: "/DeluxeRoom",
+      element: <Room/>,
+    },
+    {
+      path: "/Gallery",
+      element: <Gallery/>,
+    },
+    {
+      path: "/Corporate-Events",
+      element: <Event1/>,
+    },
+    {
+      path: "/Private-Events",
+      element: <Event2/>,
+    },
+    {
+      path: "/Activites",
+      element: <Activity/>,
+    },
+
+
     
     
     

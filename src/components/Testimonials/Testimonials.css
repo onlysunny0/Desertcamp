@@ -15,8 +15,6 @@
  align-items: center;
  border: 1px solid #fffff029;
  padding: 2% 2%;
- 
-
 }
 .Testimonials div h2{
     font-family: "Rock Salt", cursive;
@@ -68,4 +66,20 @@
     text-align: center;
     color: #fffff0;
     font-weight: 400;
+}
+
+@media only screen and (max-width: 1000px){
+    .Testimonials{
+        background: url('./testimonial.jpg');
+        background-size: cover;
+        background-position: right;
+        display: flex;
+        justify-content: center;
+    }
+    .Testimonials>div{
+        width: 90%;
+        margin: 0;
+       }
+
+
 }

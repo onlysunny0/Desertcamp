@@ -117,4 +117,7 @@
         margin-left: 10%;
         grid-template-columns: 100% ;
     }
+    .Faq h3{
+        font-size: 40px;
+    }
 }

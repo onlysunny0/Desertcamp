@@ -11,6 +11,8 @@ function Nav() {
     const [burgar, setBurgar] = useState("hamburgar");
     const [menu, setMenu] = useState("closemenu");
     const [openshop, setOpenshop] = useState("dropdown-menu");
+    const [openevent, setOpenevent] = useState("dropdown-menu");
+    const [openother, setOpenother] = useState("dropdown-menu");
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const user = useSelector((state) => state.auth.user); 
@@ -33,10 +35,29 @@ function Nav() {
     function openShop() {
         if (openshop === "dropdown-menu") {
             setOpenshop("openshop");
-        } else {
+        }   else {
             setOpenshop("dropdown-menu");
         }
     }
+    function openEvent(){
+        if (openevent === "dropdown-menu") {
+            setOpenevent("openshop");
+        }
+        else {
+            setOpenevent("dropdown-menu");
+        }
+    }
+    function openOther(){
+        if (openother === "dropdown-menu") {
+            setOpenother("openshop");
+        } 
+        else {
+            setOpenother("dropdown-menu");
+        }
+    }
+
+
+  
 
     return (
         <>
@@ -49,13 +70,27 @@ function Nav() {
                         <li><NavLink to='/'>Home</NavLink></li>
                         <li><NavLink to='/Aboutus'>About Us</NavLink></li>
                         <li className='dropdown' onClick={openShop}>
-                            <li  >Rooms<FaAngleDown /></li>
+                            <li>Rooms<FaAngleDown /></li>
                             <ul className={openshop}>
-                                <li>Camping Tents</li>
-                                <li>Deluxe Room</li>
+                                <li><NavLink to='/CampingTents' className='drop-link'>Camping Tents</NavLink></li>
+                                <li><NavLink to='/DeluxeRoom' className='drop-link'>Deluxe Room</NavLink></li>
                             </ul>
                         </li>
-                        <li>Contact</li>
+                        <li className='moblink' onClick={openEvent}>
+                            <li>Events<FaAngleDown /></li>
+                            <ul className={openevent}>
+                                <li><NavLink to='/Corporate-Events' className='drop-link'>Corporate Events</NavLink></li>
+                                <li><NavLink to='/Private-Events' className='drop-link'>Private Events</NavLink></li>
+                            </ul>
+                        </li>
+                        <li className='moblink' onClick={openOther}>
+                            <li>Other<FaAngleDown /></li>
+                            <ul className={openother}>
+                                <li><NavLink to='/Gallery' className='drop-link'>Gallery</NavLink></li>
+                                <li><NavLink to='/Activites' className='drop-link'>Activities</NavLink></li>
+                            </ul>
+                        </li>
+                        <li><a href="#Contact">Contact</a></li>
                     </ul>
                 </div>
                 <div className="center-nav-logo">
@@ -66,30 +101,28 @@ function Nav() {
                         <li className='dropdown'>
                             Events <FaAngleDown />
                             <ul className='dropdown-menu'>
-                                <li>Corporate Events</li>
-                                <li>Private Events</li>
+                                <li><NavLink to='/Corporate-Events' className='drop-link'>Corporate Events</NavLink></li>
+                                <li><NavLink to='/Private-Events' className='drop-link'>Private Events</NavLink></li>
                             </ul>
                         </li>
                         <li className='dropdown'>
                             Other <FaAngleDown />
                             <ul className='dropdown-menu'>
-                                <li>Gallery</li>
-                                <li>Blog</li>
-                                <li>Places</li>
+                                <li><NavLink to='/Gallery' className='drop-link'>Gallery</NavLink></li>
+                                <li><NavLink to='/Activites' className='drop-link'>Activities</NavLink></li>
                             </ul>
                         </li>
                     </ul>
                     <div className="user-section">
-                        <span><a href="#"><IoCallSharp /></a></span>
                         {user ? (
                             <div 
-                                className="dropdown" 
+                                className="user" 
                                 onMouseEnter={() => setDropdownOpen(true)} 
                                 onMouseLeave={() => setDropdownOpen(false)}
                             >
                                 <span>Welcome, {user.name} <FaAngleDown /></span>
                                 {dropdownOpen && (
-                                    <ul className="dropdown-menu">
+                                    <ul className="user-menu">
                                         <li onClick={handleLogout}>Logout</li>
                                     </ul>
                                 )}

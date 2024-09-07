@@ -18,19 +18,6 @@ const headingdata = [
   ];
 
 
-  const headingdata2 = [
-    {
-      start: "self",
-      duration: "70vh",
-      properties: [
-        {
-          startValue: -160,
-          endValue: 0,
-          property: "translateY",
-        },
-      ],
-    },
-  ];
 
 
   
@@ -59,10 +46,7 @@ function About() {
             </Plx>   
             <img src='./img1.jpg' alt="" />
       </div>
-      <div className="right-abt">
-        <Plx className='h-2-2' parallaxData={headingdata2}>
-            <h2>About</h2>
-        </Plx>   
+      <div className="right-abt">  
             <p className='p-1'>
                 Magic Camps combine a flavour of the Bedouin traditional way of life with the comfort of luxury accommodation plus commitment to sustainability. Our desert camps are equipped with exquisite and inviting interiors, including private bathrooms equipped with showers.
             </p>

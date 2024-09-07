@@ -29,7 +29,7 @@ function Login() {
       <div className="loginhead">
         <img src="./logo.png" alt="" />
         <span>
-        <NavLink to={'..'}><RxCross1 /></NavLink> 
+        <NavLink to={'../'}><RxCross1 /></NavLink> 
         </span>
       </div>
 

@@ -4,10 +4,24 @@ import { FaLocationDot } from "react-icons/fa6";
 import { IoMailSharp } from "react-icons/io5";
 import { IoCallSharp } from "react-icons/io5";
 import { FaWhatsapp } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { FaYoutube } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
     <footer>
+      <div className="social">
+      <p>Our Social media :</p>
+      <span>
+        <a href=""><FaWhatsapp /></a>
+        <a href=""><FaInstagram /></a>
+        <a href=""><FaXTwitter /></a>
+        <a href=""><FaYoutube /></a>
+      </span>
+    </div>
+
       <div className="footfilter">
       <div className="upperfoot">
           <img src="./logo.png" alt="" />
@@ -23,20 +37,20 @@ function Footer() {
           </ul>
           <ul>
             <h2>Rooms</h2>
-            <li><a href="#">Camping Tents</a></li>
-            <li><a href="#">Deluxe Room</a></li>
+            <li><Link to='/CampingTents'>Camping Tents</Link></li>
+            <li><Link to='/DeluxeRoom'>Deluxe Room</Link></li>
           </ul>
           <ul>
             <h2>Events</h2>
-            <li><a href="#">Corporate Events</a></li>
-            <li><a href="#">Private Events</a></li>
+            <li><Link to='/Corporate-Events'>Corporate Events</Link></li>
+            <li><Link to='/Private-Events'>Private Events</Link></li>
           </ul>
           <ul>
             <h2>Company</h2>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/Aboutus'>About us</Link></li>
+            <li><Link to='/Login'>Login</Link></li>
+            <li><Link to='/Register'>Register</Link></li>
           </ul>
       </div>
       <div className="copright">

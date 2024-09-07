@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Nav from '../Nav/Nav'
 import Hero2 from '../Hero2/Hero2'
 import About from '../About/About'
@@ -8,9 +8,14 @@ import Footer from '../footer/Footer'
 import Faq from '../Faq/Faq'
 import Contact from '../Contact/Contact'
 import Testimonials from '../Testimonials/Testimonials'
+import { useLocation } from 'react-router-dom'
 
 
 function Home() {
+  const { pathname } = useLocation();
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
   return (
     <>
      <Nav/>

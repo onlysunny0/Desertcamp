@@ -1,7 +1,8 @@
 
 .Login_page{
     width: 100%;
-    background-color: #fff;
+    height: 100vh;
+    background-color: #fffff0;
 }
 .loginhead{
     width: 100%;
@@ -9,7 +10,7 @@
     justify-content: space-between;
     padding: 0% 5%;
     align-items: center;
-    background-color: #CEB79F;
+    background-color: #fffff0;
     border-bottom: 5px solid #000;
 }
 .loginhead img{
@@ -17,12 +18,13 @@
 }
 .loginhead span a{
     font-size: 30px;
-    color: #fff;
+    color: #000;
 }
 
 .loginmain{
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 5% 10%;
 }
@@ -47,8 +49,9 @@
     width: 70%;
     padding: 2% 2%;
     border: 1px solid #00000029;
-    color: #00000074 ;
+    color: #000000c9 ;
     font-size: 15px;
+    background-color: #fffff0;
 }
 .loginform form button{
     width: 70%;
@@ -114,4 +117,25 @@
     border: none;
     text-align: center;
     text-decoration: none;
+}
+
+
+@media only screen and (max-width: 1000px){
+    .loginhead img{
+        width: 25%;
+    }
+    .loginmain{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 5% 0%;
+    }
+    .loginmain .loginform{
+        width: 100%;
+    }
+    .loginmain .registerform{
+        margin-top: 10%;
+        width: 100%;
+    }
 }

@@ -13,13 +13,15 @@ nav{
 .left-nav>ul>li>.is-active{
     color: #FF5733;
 }
-.dropdown{
-    
-}
+
 .dropdown:hover .dropdown-menu{
     display: block;
 }
-.dropdown-menu, .openshop{
+.user:hover .user-menu{
+    display: block;
+}
+
+.dropdown-menu, .user-menu, .openshop{
     display: none;
     position: absolute;
     top: 8vh;
@@ -29,28 +31,36 @@ nav{
     width: 13%;
 }
 
-.dropdown-menu>li, .openshop>li{
+.dropdown-menu>li,.user-menu>li, .openshop>li{
     list-style: none;
     color: #333333;
+    padding: 5% 2%;
+}
+.dropdown-menu>li>a , .user-menu>li>a{
     font-weight: 500;
-    font-size: 13px;
-    padding: 5% 5%;
     line-height: 30px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #333333;
 } 
-.dropdown-menu li:hover{
+.dropdown-menu li:hover,.user-menu li:hover{
     background-color: #FF5733;
     color: #FFFFF0;
 }
+
+.dropdown-menu>li:hover .drop-link{
+    color: #FFFFF0;
+} 
 
 
 
 .left-nav{
     width: 30%;
-    height: 10vh;
+    height: 100%;
     display: flex;
 }
 .left-nav>ul{
-    width: 100%;
+    width: 100vw;
     height: 100%;
     display: flex;
     align-items: center;
@@ -72,8 +82,16 @@ nav{
     font-weight: 700;
     text-decoration: none;
 }
+
 .left-nav>ul>li>a:hover{
     color: #FF5733;
+}
+.left-nav>ul>li:hover{
+    color: #FF5733;
+}
+
+.moblink{
+    display: none;
 }
 
 
@@ -105,8 +123,8 @@ nav{
 
 .right-nav{
     width: 30%;
-    height: 10vh;
-    display: flex
+    height: 100%;
+    display: flex;
 }
 .right-nav>ul{
     width: 50%;
@@ -114,7 +132,6 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    
 }
 .right-nav>ul>li{
     font-size: 13px;
@@ -135,7 +152,7 @@ nav{
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content:center;
 }
 
 .right-nav>div>span>a{
@@ -147,23 +164,24 @@ nav{
 }
 
 
-
 .user-section div{
     padding: 7% 0%;
+    cursor: pointer;
 }
 
 
 
 @media only screen and (max-width: 1100px){
+    nav{
+        height: 8vh;
+    }
+  
     .left-nav{
         display: flex;
         align-items: center;
         width: 75%;
         margin-left: 5%;
         z-index: 98;
-    }
-    .dropdown{
-        padding: 0% 0%;
     }
     .left-nav>ul{
         display: block;
@@ -180,10 +198,13 @@ nav{
         top: -100vh;
     }
     .openmenu{
-        top: 10vh;
+        top: 8vh;
     }
     .dropdown:hover .dropdown-menu{
         display: none;
+    }
+    .user:hover .user-menu{
+        display: block;
     }
     .openshop{
         display: block;
@@ -203,11 +224,19 @@ nav{
         font-size: 13px;
         padding: 5% 5%; 
     }
+    .openshop li>a{
+        font-weight: 500;
+        font-size: 13px;
+        text-decoration: none;
+        color: #333333;
+    } 
     .openshop li:hover{
         background-color: #FF5733;
         color: #FFFFF0;
     }
-
+    .moblink{
+        display: block;
+    }
 
 
 
@@ -216,6 +245,9 @@ nav{
     }
     .left-nav>ul>li:hover{
         background-color: #FF5733;
+        color: #FFFFF0;
+    }
+    .left-nav>ul>li>a:hover{
         color: #FFFFF0;
     }
     .hamburgar{
@@ -231,6 +263,7 @@ nav{
         width: 100%;
         height: 4px;
         background-color: #000;
+        transition: 1s;
     }
     .cross{
         display: flex;
@@ -240,6 +273,7 @@ nav{
         height: 20px;
         cursor: pointer;
         margin-left: 5%;
+       
     }
     .cross :nth-child(1){
         width: 100%;
@@ -249,9 +283,11 @@ nav{
         height: 4px;
         position: relative;
         top: 50%;
+        transition: 1s;
     }
     .cross  :nth-child(2){
        display: none;
+       transition: 1s;
     }
     .cross  :nth-child(3){
         width: 100%;
@@ -261,15 +297,17 @@ nav{
         height: 4px;
         position: relative;
         top: -26%;
+        transition: 1s;
     }
 
 
 
     .center-nav-logo{
         width: 50%;
+        height: 10vh;
+        border-radius: 25px;
         position: absolute;
         z-index: 100;
-       
         background-color: #CEB79F;
         box-shadow:  rgba(99, 99, 99, 0.126) 0px 1px 0px 0px;
     }
@@ -278,7 +316,7 @@ nav{
     }
     .right-nav{
         width: 25%;
-        margin-right: 5%;
+        align-items: center;
     }
     .right-nav>ul{
         display: none;
