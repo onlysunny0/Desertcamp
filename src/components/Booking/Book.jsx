@@ -160,7 +160,7 @@ function Book() {
               Book Now <div className="headingline"></div>
             </h3>
             <h4>Deluxe Room & Camps</h4>
-            <div id="carouselExampleSlidesOnly" class="carousel slide book-slide" data-bs-ride="carousel">
+            <div id="carouselExampleSlidesOnly" className="carousel slide book-slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
                       <img src="./room.jpg" className="d-block w-10"  />

@@ -1,7 +1,7 @@
 footer{
     width: 100%;
     overflow: hidden;
-    background: url(./foot.jpg);
+    background: url(../../../public/foot.jpg);
     background-size: cover; 
 }
 .social{

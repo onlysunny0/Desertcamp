@@ -61,8 +61,8 @@ function Faq() {
             {
                 Faq.map((ele , index) => {
                     return(
-                        <div>
-                            <h5 className="quest"
+                        <div key={ele.question}>
+                            <h5 className="quest" 
                             onClick={()=>{
                                 let newfaq = [...Faq];
                                 if(newfaq[index].state == 'openans'){

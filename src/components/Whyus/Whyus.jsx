@@ -1,5 +1,6 @@
 import React from 'react'
 import './Whyus.css'
+import { Link } from 'react-router-dom'
 
 function Whyus() {
   return (
@@ -14,7 +15,7 @@ function Whyus() {
                 <h5>Competitive Prices</h5>
                 <p>We believe that everyone should have access to quality camping gear without breaking the bank. Our products are competitively priced, allowing you to embark on your desert escapades without overspending.</p>
             </div>
-            <button>About us</button>
+            <a href="#Contact">Contact Us</a>
         </div>
         <div className="why-2">
             <img src="https://desertcamping.ae/wp-content/uploads/2023/07/picture.png" alt="" />

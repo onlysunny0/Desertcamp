@@ -70,21 +70,21 @@ function Nav() {
                         <li><NavLink to='/'>Home</NavLink></li>
                         <li><NavLink to='/Aboutus'>About Us</NavLink></li>
                         <li className='dropdown' onClick={openShop}>
-                            <li>Rooms<FaAngleDown /></li>
+                            Rooms<FaAngleDown />
                             <ul className={openshop}>
                                 <li><NavLink to='/CampingTents' className='drop-link'>Camping Tents</NavLink></li>
                                 <li><NavLink to='/DeluxeRoom' className='drop-link'>Deluxe Room</NavLink></li>
                             </ul>
                         </li>
                         <li className='moblink' onClick={openEvent}>
-                            <li>Events<FaAngleDown /></li>
+                            Events<FaAngleDown />
                             <ul className={openevent}>
                                 <li><NavLink to='/Corporate-Events' className='drop-link'>Corporate Events</NavLink></li>
                                 <li><NavLink to='/Private-Events' className='drop-link'>Private Events</NavLink></li>
                             </ul>
                         </li>
                         <li className='moblink' onClick={openOther}>
-                            <li>Other<FaAngleDown /></li>
+                            Other<FaAngleDown />
                             <ul className={openother}>
                                 <li><NavLink to='/Gallery' className='drop-link'>Gallery</NavLink></li>
                                 <li><NavLink to='/Activites' className='drop-link'>Activities</NavLink></li>
@@ -94,7 +94,7 @@ function Nav() {
                     </ul>
                 </div>
                 <div className="center-nav-logo">
-                    <img src='./logo.png' alt="Logo" />
+                   <a href="/"> <img src='./logo.png' alt="Logo" /></a>
                 </div>
                 <div className="right-nav">
                     <ul>

@@ -4,11 +4,13 @@ import { useDispatch } from 'react-redux';
 import { signUp } from '../../redux/authSlice';
 import './Register.css'; // Import custom CSS
 import { RxCross1 } from "react-icons/rx";
+import authService from '../../backend/auth';
 
 const Register = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [mobileNumber , setMobileNumber] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -19,10 +21,26 @@ const Register = () => {
             alert('Passwords do not match.');
             return;
         }
-        const user = { name, email, password };
-        dispatch(signUp(user));
-        alert('Sign up successfully');
-        navigate('/login');
+       
+        const userData = {
+            name : name ,
+            userName : name ,
+            email : email ,
+            mobileNumber : mobileNumber,
+            password : password ,
+            confirmPassword : confirmPassword,
+            address: "jaipur",
+            role: "user"
+        }
+
+        const formData = JSON.stringify(userData);
+        console.log(formData);
+        authService.createAccount(formData).then((response)=>{
+            console.log(response)
+            navigate('/login');
+        })
+       
+        
     };
 
     return (
@@ -55,6 +73,16 @@ const Register = () => {
                             required
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                        />
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            className="register-input"
+                            placeholder="Enter your Contact no."
+                            required
+                            value={mobileNumber}
+                            onChange={(e) => setMobileNumber(e.target.value)}
                         />
 
                         <input

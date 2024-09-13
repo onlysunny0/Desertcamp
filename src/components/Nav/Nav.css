@@ -106,13 +106,16 @@ nav{
     height: 13vh;
     background-color: #CEB79F;
     border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     z-index: 101;
     box-shadow:  rgba(99, 99, 99, 0.126) 0px 1px 0px 0px;
 }
-.center-nav-logo img{
+.center-nav-logo a{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center-nav-logo a img{
     width: 45%;
 }
 
@@ -311,7 +314,13 @@ nav{
         background-color: #CEB79F;
         box-shadow:  rgba(99, 99, 99, 0.126) 0px 1px 0px 0px;
     }
-    .center-nav-logo img{
+    .center-nav-logo a{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .center-nav-logo a img{
         width: 25%;
     }
     .right-nav{
@@ -328,12 +337,13 @@ nav{
 
 
 @media only screen and (max-width: 750px){
-    .center-nav-logo img{
+    
+    .center-nav-logo a img{
         width: 40%;
     }
 }
 @media only screen and (max-width: 600px){
-    .center-nav-logo img{
+    .center-nav-logo a img{
         width: 50%;
     }
 }
